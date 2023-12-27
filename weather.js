@@ -47,7 +47,19 @@ const checkWeather = async (city) => {
 
 SearchBtn.addEventListener("click", () => {
     checkWeather(SearchBox.value);
-})
+});
+
+
+// Listen for "keydown" event on the input field
+SearchBox.addEventListener("keydown", (event) => {
+    // Check if the key pressed is Enter (key code 13)
+    if (event.key === "Enter") {
+        checkWeather(SearchBox.value);
+    }
+});
+
+
+
 
 // The JavaScript code is retrieving information from the OpenWeatherMap API and then using that information to update the content of HTML elements.
 
